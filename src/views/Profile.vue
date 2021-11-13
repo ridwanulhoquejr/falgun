@@ -4,7 +4,10 @@
   
     <section id="dashboard">
 
+
         <div class="container dashboard-container">
+        <profileNav @user="handleUser" />
+
 
           <div class="wrapper">
 
@@ -69,8 +72,8 @@
             <!-- user details -->
             <div class="box user-details">
                 <img src="../assets/img/user.svg" alt="">
-                <h3>Salman Fardeen</h3>
-                <p>salmanfactg@gmail.com</p>
+                <h3>{{userInfo.displayName}}</h3>
+                <p>ridwanulhoque@gmail.com</p>
             </div>
 
             <!-- graph -->
@@ -97,7 +100,21 @@
 </template>
 
 <script>
+import { ref } from '@vue/reactivity'
+import profileNav from '../components/profileNav.vue'
+
 export default {
+
+    components: { profileNav },
+
+    setup(){
+        const userInfo = ref('')
+
+        const handleUser = (user) =>{
+            userInfo.value = user
+        } 
+    return { handleUser, userInfo}
+    }
 
 }
 </script>
@@ -123,8 +140,8 @@ export default {
 }
 .dashboard-container{
     min-height: calc(100vh - 100px);
-    margin-top: 100px;
-
+    margin-top: 100px!important;
+    flex-direction: column;
 
 }
 .wrapper{
@@ -141,6 +158,7 @@ export default {
     flex-direction: column;
     align-items: stretch;
     height: max-content;
+    gap: 10px;
 
 }
 .left .box{
@@ -172,9 +190,7 @@ export default {
 }
 
 /* main */
-.main{
-    margin-bottom: 20px;
-}
+
 .box.main{
     display: flex;
     flex-direction: column;
@@ -237,7 +253,6 @@ export default {
     justify-content: center;
     align-items: center;
     gap: 5px;
-    margin-bottom: 20px;
 }
 .user-details img{
     width: 60px;

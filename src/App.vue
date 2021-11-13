@@ -7,22 +7,17 @@
 
 <script>
 import NavBar from './components/NavBar.vue'
-
 export default {
-
   components: {NavBar}
 }
-
 </script>
 
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300;400;700&display=swap');
-
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-
 }
 * {
   margin: 0;
@@ -37,6 +32,9 @@ export default {
   justify-content: center;
   align-items: center;
 }
-
+.error{
+  color: red;
+  font-size: 14px;
+}
 
 </style>

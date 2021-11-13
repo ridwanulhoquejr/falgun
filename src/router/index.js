@@ -5,6 +5,20 @@ import Register from '../views/Register.vue';
 import Profile from '../views/Profile.vue';
 import Courses from '../views/Courses.vue';
 import CourseLesson from '../views/CourseLesson.vue';
+import CourseDetails from '../views/CourseDetails.vue';
+import { projectAuth } from '../firebase/config';
+
+// auth guard
+const requireAuth = (to, from, next) => {
+  let user = projectAuth.currentUser; //who is current user
+  console.log('current user is :', user);
+
+  if (!user) {
+    next({ name: 'Home' });
+  } else {
+    next();
+  }
+};
 
 const routes = [
   {
@@ -26,6 +40,7 @@ const routes = [
     path: '/profile',
     name: 'Profile',
     component: Profile,
+    beforeEnter: requireAuth,
   },
   {
     path: '/courses',
@@ -36,6 +51,11 @@ const routes = [
     path: '/lessons',
     name: 'CourseLesson',
     component: CourseLesson,
+  },
+  {
+    path: '/details',
+    name: 'CourseDetails',
+    component: CourseDetails,
   },
 ];
 

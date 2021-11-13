@@ -10,25 +10,23 @@
       Sign in to your account
     </h2>
 
-    <form>
+    <form @submit.prevent="handleSubmit">
 
       <div class="field-container">
-        <label for=""> Email </label>
-        <input type="email">
+        <input type="email" required placeholder="Email" v-model="email">
       </div>
 
       <div class="field-container">
-        <label for="">
-          Password
-        </label>
-        <input type="password">
-
-      </div>
         
-        <ion-icon name="eye-off-outline"></ion-icon>
-        <div class="reg">
-            <router-link :to="{name: 'Home'}"> Login </router-link>
-        </div>
+        <input type="password" required placeholder="Password" v-model="password">
+
+      </div>
+
+        <div class="error"> {{error}}</div>
+          <button class="reg btn">
+             Sign In 
+          </button>
+        
         
         <div class="forget">
           <a href="#">Forget Password</a>
@@ -50,7 +48,8 @@
         </a>
     </div>
     <p class="end">
-      New to Falgun? <a href="register.html">Create new account</a>
+      New to Falgun? 
+      <router-link :to="{name: 'Register'}"> Create new account </router-link>
 
     </p>
     
@@ -60,13 +59,36 @@
 </template>
 
 <script>
+import { ref } from '@vue/reactivity'
+import useLogin from '../composables/useLogin'
+import {useRouter} from 'vue-router'
 
 export default {
 
   components: {},
   
-    setup(){
+    setup(props, contex){
 
+
+      const route = useRouter()
+
+      const { error, login } = useLogin(email, password) // from useLogin.js
+
+      const email = ref('')
+      const password = ref('')
+
+
+      const handleSubmit = async () => {
+        await login(email.value, password.value)
+
+        if(!error.value){
+          console.log('User logged in')
+          route.push({ name: 'Profile'})
+        }
+      }
+
+
+    return {email, password, error, handleSubmit}
 
     }
 
@@ -148,7 +170,10 @@ input {
   border: none;
   box-shadow: #C2C1C7 0px 5px 10px;
 }
-
+.field-container label{
+  font-size: 15px;
+  padding: 5px;
+}
 .reg
 {
   border: solid #43A8EB 1px;
@@ -157,6 +182,20 @@ input {
   width: 460px;
   height: 40px;
 }
+
+.reg.btn{
+    color: white;
+    cursor: pointer;
+    background-color: #43A8EB;
+    display: block;
+    text-align: center;
+    padding: 5px;
+    margin-top: 10px;
+    border-radius: 5px;
+    transition: ease .2s;
+  
+}
+
 .reg a
 {
   display: flex;

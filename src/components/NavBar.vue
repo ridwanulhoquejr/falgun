@@ -7,7 +7,7 @@
         </div>
 
         <nav class="nav-links">
-          <router-link :to="{name: 'Home'}"> Home </router-link>
+          <router-link :to="{name: 'Courses'}"> Courses </router-link>
           <router-link :to="{name: 'Login'}"> Login </router-link>
           <router-link :to="{name: 'Register'}"> Register </router-link>
         </nav>
@@ -57,7 +57,7 @@ header{
 .nav-links a{
   text-decoration: none;
   padding: 25px;
-  font-size: 18px;
+  font-size: 16px;
   letter-spacing: 1.2px;
   color: white;
   transition: ease .3s;
@@ -67,7 +67,7 @@ header{
 }
 header .nav-links a.router-link-active{
     color: #43A8EB;
-    font-size: 19px;
+    font-size: 18px;
     font-weight: bold;
   
 }

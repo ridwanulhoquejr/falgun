@@ -8,6 +8,8 @@
       </div>
      <div class="program_element">
       <div class="left">
+          <router-link :to="{name: 'CourseLesson'}">
+
         <div class="js item">
           <div class="js_img">
             <img src="../assets/img/js.png" alt="js logo" />
@@ -20,94 +22,116 @@
             <h5>It's the most popular language in the world!</h5>
           </div>
         </div>
-        <div class="java item">
-          <div class="java_image">
-            <img src="../assets/img/java.png" alt="java Logo" />
+         </router-link>
+
+        <router-link :to="{name: 'CourseLesson'}"> 
+          <div class="java item">
+            <div class="java_image">
+              <img src="../assets/img/java.png" alt="java Logo" />
+            </div>
+            <div class="hr">
+              <hr>
+            </div>
+            <div class="java_text">
+              <h3>Java!</h3>
+              <h5>A high level language</h5>
+            </div>
+          </div> 
+        </router-link>
+
+        <router-link :to="{name: 'CourseLesson'}"> 
+          <div class="c item">
+            <div class="c_img">
+              <img src="../assets/img/c.png" alt="c logo" />
+            </div>
+            <div class="hr">
+              <hr>
+            </div>
+            <div class="c_text">
+              <h3>C</h3>
+              <h4>general purpose language</h4>
+            </div>
           </div>
-          <div class="hr">
-            <hr>
+        </router-link>
+
+        <router-link :to="{name: 'CourseLesson'}"> 
+          <div class="html item">
+            <div class="html_img">
+              <img src="../assets/img/html.png" alt="html logo" />
+            </div>
+            <div class="hr">
+              <hr>
+            </div>
+            <div class="html_text">
+              <h3>HTML</h3>
+              <h4>A markup language</h4>
+            </div>
           </div>
-          <div class="java_text">
-            <h3>Java!</h3>
-            <h5>A high level language</h5>
-          </div>
-        </div>
-        <div class="c item">
-          <div class="c_img">
-            <img src="../assets/img/c.png" alt="c logo" />
-          </div>
-          <div class="hr">
-            <hr>
-          </div>
-          <div class="c_text">
-            <h3>C</h3>
-            <h4>general purpose language</h4>
-          </div>
-        </div>
-        <div class="html item">
-          <div class="html_img">
-            <img src="../assets/img/html.png" alt="html logo" />
-          </div>
-          <div class="hr">
-            <hr>
-          </div>
-          <div class="html_text">
-            <h3>HTML</h3>
-            <h4>A markup language</h4>
-          </div>
-        </div>
+        </router-link>
       </div>
 
-
+      
       <div class="Right">
-        <div class="py item">
-          <div class="py_img">
-            <img src="../assets/img/py.png" alt="js logo" />
+
+        <router-link :to="{name: 'CourseLesson'}">
+          <div class="py item">
+            <div class="py_img">
+              <img src="../assets/img/py.png" alt="js logo" />
+            </div>
+            <div class="hr">
+              <hr>
+            </div>
+            <div class="py_text">
+              <h3>Python!</h3>
+              <h5>It's the most popular language in the world!</h5>
+            </div>
           </div>
-          <div class="hr">
-            <hr>
+         </router-link>
+
+        <router-link :to="{name: 'CourseLesson'}"> 
+          <div class="dart item">
+            <div class="dart_image">
+              <img src="../assets/img/dart.png" alt="java Logo" />
+            </div>
+            <div class="hr">
+              <hr>
+            </div>
+            <div class="dart_text">
+              <h3>Dart!</h3>
+              <h5>A high level language</h5>
+            </div>
           </div>
-          <div class="py_text">
-            <h3>Python!</h3>
-            <h5>It's the most popular language in the world!</h5>
+        </router-link>
+
+        <router-link :to="{name: 'CourseLesson'}"> 
+          <div class="cp item">
+            <div class="cp_img">
+              <img src="../assets/img/c++.png" alt="c logo" />
+            </div>
+            <div class="hr">
+              <hr>
+            </div>
+            <div class="cp_text">
+              <h3>C++</h3>
+              <h4>general purpose language</h4>
+            </div>
           </div>
-        </div>
-        <div class="dart item">
-          <div class="dart_image">
-            <img src="../assets/img/dart.png" alt="java Logo" />
+        </router-link>
+
+        <router-link :to="{name: 'CourseLesson'}">
+          <div class="css item">
+            <div class="css_img">
+              <img src="../assets/img/css.png" alt="html logo" />
+            </div>
+            <div class="hr">
+              <hr>
+            </div>
+            <div class="css_text">
+              <h3>CSS</h3>
+              <h4>A markup language</h4>
+            </div>
           </div>
-          <div class="hr">
-            <hr>
-          </div>
-          <div class="dart_text">
-            <h3>Dart!</h3>
-            <h5>A high level language</h5>
-          </div>
-        </div>
-        <div class="cp item">
-          <div class="cp_img">
-            <img src="../assets/img/c++.png" alt="c logo" />
-          </div>
-          <div class="hr">
-            <hr>
-          </div>
-          <div class="cp_text">
-            <h3>C++</h3>
-            <h4>general purpose language</h4>
-          </div>
-        </div>
-        <div class="css item">
-          <div class="css_img">
-            <img src="../assets/img/css.png" alt="html logo" />
-          </div>
-          <div class="hr">
-            <hr>
-          </div>
-          <div class="css_text">
-            <h3>CSS</h3>
-            <h4>A markup language</h4>
-          </div>
-        </div>
+         </router-link>
       </div>
      </div>
     </div>
@@ -140,7 +164,6 @@ img {
   }
   
   .top_line {
-    gap: 30px;
   }
   .S {
     border: solid #d52772e3 1px;
@@ -206,16 +229,17 @@ img {
       min-height: calc(100vh - 100px);
       margin-top: 100px;
   }
-    .py, .dart, .cp, .css {
+
+.py, .dart, .cp, .css {
         display: flex;
-        
-        border: solid rgb(211, 192, 192) 1px;
         border-radius: 20px;
         width: 400px;
         background-color: white;
-        box-shadow: 10px 10px 10px gray;
+        border: solid 1px #C2C1C7;
+        border-radius: 10px;
+        box-shadow: #C2C1C7 0px 5px 10px;
         
-      }
+}
   
 
   .hr {
@@ -241,6 +265,8 @@ img {
   {
       margin-bottom: 20px;
   }
+
+
 
   .js_img img, .java_image img, .c_img img, .html_img img
   {

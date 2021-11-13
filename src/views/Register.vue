@@ -6,48 +6,80 @@
     <h2>
         Create an account
     </h2>
-    <form >
+    <form @submit.prevent="handleSubmit">
 
       <div class="field-container">
-
-        <label for=""> Name </label>
-        <input type="text">
-      </div>
-      <div class="field-container">
-        <label for=""> Email </label>
-        <input type="email">
+        <input type="text" required v-model="displayName" placeholder="Name">
       </div>
 
       <div class="field-container">
-        <label for="">
-          Password
-        </label>
-        <input type="password">
-
+        <input type="email" required placeholder="Email" v-model="email">
       </div>
+
+      <div class="field-container">
         
-        <ion-icon name="eye-off-outline"></ion-icon>
-        <div class="reg">
-            <router-link :to="{name: 'Home'}"> Register </router-link>
+        <input type="password" required placeholder="Password" v-model="password">
+      </div>
+      <div class="error"> {{ error }}</div>
+
+          <button class="reg btn">
+             Sign Up 
+          </button>
+        
+        
+        <div class="forget">
+          <a href="#">Forget Password</a>
         </div>
-        
     </form>
 
-    <div class="have-account">
-      
-      <p>
-       Already have an account? <a href="#">Sign in</a>
-      </p>
-   </div>
-   
+      <div class="have-account"> 
+        <p>
+            Already have an account? 
+            <router-link :to="{name: 'Login'}"> Sign In </router-link>
+        
+        </p>
+      </div>
     </div>
-
-    
   </div>
 </template>
 
 <script>
+import { ref } from '@vue/reactivity'
+import useSignup from '../composables/useSignup'
+import {useRouter} from 'vue-router'
+
+
+
 export default {
+  components: {},
+  
+    setup(){
+
+      const route = useRouter()
+      const { error, signup } = useSignup() // from useSignup.js
+
+
+      const displayName = ref('')
+      const email = ref('')
+      const password = ref('')
+
+
+      const handleSubmit = async () => {
+
+        await signup(email.value, password.value, displayName.value)
+        console.log(displayName)
+
+        if(!error.value){
+          route.push({ name: 'Courses'})
+        }
+
+      }
+
+
+
+    return {email, password, displayName, error, handleSubmit}
+
+    }
 
 }
 </script>
@@ -91,7 +123,10 @@ body{
 .field-container{
   margin-bottom: 15px;
   width: 100%;
-
+}
+.field-container label{
+  font-size: 15px;
+  padding: 5px;
 }
 .have-account{
   margin-top: 18px;
@@ -122,6 +157,8 @@ form {
 input {
   width: 100%;
   height: 40px;
+  padding: 8px;
+  font-weight: bold;
   border-radius: 5px;
   box-shadow: #C2C1C7 0px 5px 10px;
 }

@@ -21,7 +21,6 @@
 
 <script>
 import NavBar from '../components/NavBar.vue'
-
 export default {
   name: 'Home',
   components: {NavBar}
@@ -29,7 +28,6 @@ export default {
 </script>
 
 <style>
-
 *{
     margin: 0;
     padding: 0;
@@ -37,10 +35,7 @@ export default {
     text-decoration: none;
     font-family: Fira Sans;
 }
-
-
 #hero{
-
   background-image: url(../assets/img/home_page_background.png);
   background-size: cover;
   background-position: top center;
@@ -67,7 +62,6 @@ export default {
 }
 .hero.container{
   min-height: 100vh;
-
 }
 .hero-content {
   text-align: center;
@@ -87,7 +81,6 @@ export default {
 }
 .hero-section-content{
  
-
 } */
  #btn{
     height: 55px;
@@ -108,5 +101,4 @@ export default {
 #btn:hover{
     background-color: #1884cc;
 }
-
 </style>

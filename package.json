@@ -2,12 +2,17 @@
   "name": "falgun",
   "version": "0.1.0",
   "private": true,
+  "description": "## Project setup ``` npm install ```",
+  "author": "ridwan",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build"
   },
+  "main": "babel.config.js",
   "dependencies": {
     "core-js": "^3.6.5",
+    "firebase": "^9.4.1",
+    "firebase-admin": "^10.0.0",
     "vue": "^3.0.0",
     "vue-router": "^4.0.0-0"
   },
@@ -18,5 +23,14 @@
     "@vue/compiler-sfc": "^3.0.0",
     "node-sass": "^5.0.0",
     "sass-loader": "^10.0.5"
+  },
+  "bugs": {
+    "url": "https://github.com/ridwanulhoquejr/falgun/issues"
+  },
+  "homepage": "https://github.com/ridwanulhoquejr/falgun#readme",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ridwanulhoquejr/falgun.git"
   }
 }
