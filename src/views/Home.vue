@@ -5,7 +5,7 @@
     <div class="hero container">
 
     <div class="hero-content">
-      <h1>Coding is language of future</h1>
+      <h1>Coding is the language of future</h1>
       <p class="para"> 
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam nam aliquid error repudiandae facere dignissimos.
       </p>

@@ -24,11 +24,13 @@ export default {
         const { user } = getUser()
 
         const handleLogout = async ()=> {
+
+            route.push({name: 'Home'}) //redirected to HomePage after Logged Out
+
             await logout()
             if(!error.value){
                 console.log('user logged out')
                 contex.emit('user', )
-                route.push({name: 'Home'}) //redirected to HomePage after Logged Out
             }
         }
 

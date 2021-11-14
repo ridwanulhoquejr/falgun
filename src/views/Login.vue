@@ -17,9 +17,7 @@
       </div>
 
       <div class="field-container">
-        
         <input type="password" required placeholder="Password" v-model="password">
-
       </div>
 
         <div class="error"> {{error}}</div>

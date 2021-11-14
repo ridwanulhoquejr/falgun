@@ -163,8 +163,7 @@ img {
     align-items: center;
   }
   
-  .top_line {
-  }
+ 
   .S {
     border: solid #d52772e3 1px;
     height: 30px;
