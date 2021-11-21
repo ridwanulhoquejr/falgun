@@ -30,7 +30,7 @@ export default {
             await logout()
             if(!error.value){
                 console.log('user logged out')
-                contex.emit('user', )
+               
             }
         }
 
@@ -43,17 +43,16 @@ export default {
 <style>
 
 .profile-nav{
-    width: 90%;
+    width: 60%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px;
-    border-bottom: 1px solid #32128b8a;
-    margin-bottom: 40px;
+    padding: 25px;
+   
 }
 .profile-nav p{
     margin: 2px;
-    font-size: 16px;
+    font-size: 14px;
     color: #444;
 }
 .profile-nav p.email{
@@ -70,12 +69,12 @@ export default {
     margin-top: 10px;
     border-radius: 10px;
     transition: ease .2s;
-    width: 90px;
-    height: 35px;
+    width: 70px;
+    height: 30px;
     border: none;
 }
 .button-profile:hover{
-    background-color: #32128b8a;
+    background-color: #1884cc;
     cursor: pointer;
 }
 </style>

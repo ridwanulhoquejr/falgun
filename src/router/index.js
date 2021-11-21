@@ -5,7 +5,7 @@ import Register from '../views/Register.vue';
 import Profile from '../views/Profile.vue';
 import Courses from '../views/Courses.vue';
 import CourseLesson from '../views/CourseLesson.vue';
-import CourseDetails from '../views/CourseDetails.vue';
+import CourseDetails from '../components/CourseDetails.vue';
 import { projectAuth } from '../firebase/config';
 
 // auth guard

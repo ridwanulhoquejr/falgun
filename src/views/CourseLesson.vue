@@ -1,23 +1,12 @@
 <template>
 
-    <div>
-    <section id="lesson-info">
-      <div class="container">
-        <h1>Python</h1>
-        <p>
-          Phython is an interpreted high-level general-purpose programming language. Its design philosophy
-          emphasizes
-          code readability with its use of significant indentation. Mainly used to build automate tasks, AI and
-          conduct data analysis.
-        </p>
-        <img src="/img/python-logo.svg" alt="">
-      </div>
-    </section>
-  </div>
+  <NavBar />
+
+    
   <div class="container lessons-container">
     <!-- lesson info section -->
 
-    <h2 class="page-title">Lessons</h2>
+    <!-- <h2 class="page-title">Lessons</h2> -->
     <div class="lesson-wrapper">
 
       <!-- lessons details section -->
@@ -27,33 +16,18 @@
           <div class="lesson sec" id="lesson">
             <a href="#l1">Introduction</a>
 
-            <div class="popup" id="l1">
-              <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fuga consequuntur voluptas, magnam
-                aliquam tenetur aperiam vitae earum, natus at nisi facere? Dolore neque architecto
-                necessitatibus error, adipisci deserunt omnis sequi.</p>
-            </div>
           </div>
 
-          <div class="lesson sec">
-            <div class="lesson sec2.1">
+          <div class="lesson">
+            <div class="lesson">
               <a href="#l2">Variable & Identifiers</a>
-
-              <div class="popup" id="l2">
-              </div>
             </div>
             <div class="lesson sec2.2">
               <a href="#l3">Indentation & Comments</a>
-
-              <div class="popup" id="l3">
-                <p>Indentation & Comments Details</p>
-              </div>
             </div>
+
             <div class="lesson sec2.3">
               <a href="#l4">Data Type</a>
-
-              <div class="popup" id="l4">
-                <p>Data Type Details</p>
-              </div>
             </div>
           </div>
 
@@ -61,49 +35,64 @@
             <div class="lesson sec3.1">
               <a href="#l5">Conditions</a>
 
-              <div class="popup" id="l5">
-                <p>Conditions Details</p>
-              </div>
             </div>
             <div class="lesson sec3.2">
               <a href="#l6">Loops</a>
 
-              <div class="popup" id="l6">
-                <p>Loops Details</p>
-              </div>
+              
             </div>
             <div class="lesson sec3.3">
               <a href="#l7">Arrays</a>
 
-              <div class="popup" id="l7">
-                <p>Arrays Details</p>
-              </div>
+              
             </div>
           </div>
 
+         
           <div class="lesson sec">
             <a href="#l8">Dictionary</a>
-
-            <div class="popup" id="l8">
-              <p>Dictionary Details</p>
-            </div>
           </div>
-
+          <div class="lesson sec">
+            <a href="#l8">Dictionary</a>
+          </div>
+          <div class="lesson sec">
+            <a href="#l8">Dictionary</a>
+          </div>
+          <div class="lesson sec">
+            <a href="#l8">Dictionary</a>
+          </div>
+          <div class="lesson sec">
+            <a href="#l8">Dictionary</a>
+          </div>
+          <div class="lesson sec">
+            <a href="#l8">Dictionary</a>
+          </div>
+          <div class="lesson sec">
+            <a href="#l8">Dictionary</a>
+          </div>
+          <div class="lesson sec">
+            <a href="#l8">Dictionary</a>
+          </div>
+          <div class="lesson sec">
+            <a href="#l8">Dictionary</a>
+          </div>
+          <div class="lesson sec">
+            <a href="#l8">Dictionary</a>
+          </div>
         </div>
       </section>
-      <div class="popup">
+
+      <div class="popup" v-if="{isDeafualt: true}">
         <div class="sec">
           <div class="lesson sec3.1">
             <a href="#l5">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolore amet omnis saepe quidem
               similique, doloribus, facere sit recusandae perspiciatis adipisci magnam, quasi dicta sapiente
               perferendis? Accusamus non perspiciatis unde ipsam?</a>
           </div>
-          <div class="lesson sec3.2">
-            <a href="#l6">Loops</a>
-
-          </div>
-          <div class="lesson sec3.3">
-            <a href="#l7">Arrays</a>
+          <div class="lesson sec3.1">
+            <a href="#l5">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolore amet omnis saepe quidem
+              similique, doloribus, facere sit recusandae perspiciatis adipisci magnam, quasi dicta sapiente
+              perferendis? Accusamus non perspiciatis unde ipsam?</a>
           </div>
         </div>
       </div>
@@ -113,27 +102,33 @@
 </template>
 
 <script>
+import NavBar from '../components/NavBar.vue'
+
 export default {
+  components: {NavBar}
 
 }
 </script>
 
-<style scopped>
+<style >
 
 .container.lessons-container {
 	flex-direction: column;
+  margin-top: 100px;
 }
 
 .lesson-wrapper {
 	width: 100%;
+  max-width: 720px;
 	display: flex;
 	flex-direction: row;
 	gap: 20px;
 	align-items: flex-start;
 	justify-content: flex-start;
+  margin-top: 50px;
 }
 #lessons-details {
-	flex: 4;
+	flex: 3;
 }
 .popup {
 	flex: 6;
@@ -152,13 +147,15 @@ export default {
 .lessons-container {
 	margin-top: 50px;
 	flex-direction: column;
-	/* min-height: calc(100vh - 100px);
-	margin-top: 100px; */
+	/* min-height: calc(100vh - 100px); */
+	/* margin-top: 100px; */
 }
 .page-title {
 	margin-right: auto;
-  margin-top: 40px;
+  /* margin-top: 40px; */
   font-size: 1.7em;
+
+  padding: 25px 0 0 20px;
 }
 
 /* lesson info section */
@@ -235,6 +232,7 @@ export default {
 	background-color: #6b61e1;
 	color: white;
 	transform: scale(1.1);
+  transition: ease-in-out 0.2s;
 }
 /* global */
 

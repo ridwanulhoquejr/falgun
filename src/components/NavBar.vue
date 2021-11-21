@@ -1,5 +1,5 @@
 <template>
-    <header>
+    <header :class="{isHome: isHome}">
       <div class="container header-container">
 
         <div class="logo">
@@ -10,13 +10,26 @@
           <router-link :to="{name: 'Courses'}"> Courses </router-link>
           <router-link :to="{name: 'Login'}"> Login </router-link>
           <router-link :to="{name: 'Register'}"> Register </router-link>
+          <router-link v-if="user" :to="{name: 'Profile'}"> Profile </router-link>
         </nav>
       </div>
     </header>
 </template>
 
 <script>
+import getUser from '../composables/getUser'
+
+
 export default {
+  props: ['isHome'],
+
+  setup(){
+    const { user } = getUser()
+
+    return { user }
+  }
+
+  
 
 }
 </script>
@@ -56,8 +69,8 @@ header{
 }
 .nav-links a{
   text-decoration: none;
-  padding: 25px;
-  font-size: 16px;
+  padding: 20px;
+  font-size: 14px;
   letter-spacing: 1.2px;
   color: white;
   transition: ease .3s;
@@ -67,15 +80,17 @@ header{
 }
 header .nav-links a.router-link-active{
     color: #43A8EB;
-    font-size: 18px;
+    font-size: 16px;
     font-weight: bold;
-  
 }
 header .logo{
   display: flex;
   justify-content: center;
   align-items: center;
   padding-left: 100px;
+}
+header.isHome{
+  background-image: none;
 }
 
 

@@ -1,55 +1,59 @@
 <template>
 
+<NavBar />
+
 <div class="main">
+
    <div class="container login-container">
-    <div class="top_line">
-     
-    </div>
-      
-    <h2>
-      Sign in to your account
+    
+    <h2 class="login-title">
+      Login to Falgun
     </h2>
 
     <form @submit.prevent="handleSubmit">
 
-      <div class="field-container">
-        <input type="email" required placeholder="Email" v-model="email">
-      </div>
+        <div class="field-container">
+          <input type="email" required placeholder="Email" v-model="email">
+        </div>
 
-      <div class="field-container">
-        <input type="password" required placeholder="Password" v-model="password">
-      </div>
+        <div class="field-container">
+          <input type="password" required placeholder="Password" v-model="password">
+        </div>
 
-        <div class="error"> {{error}}</div>
+          <div class="error"> {{error}}</div>
           <button class="reg btn">
              Sign In 
           </button>
         
         
-        <div class="forget">
-          <a href="#">Forget Password</a>
-        </div>
+          <div class="forget">
+            <router-link :to="{}"> Forget Password?</router-link>
+          </div>
 
     </form>
-    <div class="or">
+    <!-- <div class="or">
       <hr>
     <p>or</p>
     <hr>
-    </div>
+    </div> -->
     
-    <div class="sign_in_with">
+    <!-- <div class="sign_in_with">
       <a href="#" class="Google">
         Sign in with Google
       </a>
         <a href="#" class="Facebook">
           Sign in with Facebook
         </a>
-    </div>
-    <p class="end">
-      New to Falgun? 
-      <router-link :to="{name: 'Register'}"> Create new account </router-link>
+    </div> -->
+      <div class="alternate">
+        <p class="end">
+        New to Falgun? 
+        <router-link class="alternate-style" :to="{name: 'Register'}"> Create new account </router-link>
 
-    </p>
+        </p>
+
+      </div>
+    
     
    </div>
   </div>
@@ -60,10 +64,12 @@
 import { ref } from '@vue/reactivity'
 import useLogin from '../composables/useLogin'
 import {useRouter} from 'vue-router'
+import NavBar from '../components/NavBar.vue'
+
 
 export default {
 
-  components: {},
+  components: {NavBar},
   
     setup(props, contex){
 
@@ -93,7 +99,7 @@ export default {
 }
 </script>
 
-<style scopped>
+<style >
 
 body{
     width: 100%;
@@ -117,7 +123,8 @@ body{
 }
 .container.login-container{
   flex-direction: column;
-  min-height: 100vh;
+  min-height: calc(100vh - 40px);
+  padding-top: 40px;
 }
 
 .main img {
@@ -140,7 +147,9 @@ body{
   h2{
   margin-bottom: 25px;
 }
-
+.login-title{
+  font-weight: normal;
+}
 a.button {
   color: blue;
   border: solid blue 1px;
@@ -153,7 +162,6 @@ a.button:hover {
   color: white;
 }
 form {
-
   display: flex;
   flex-direction: column;
   width: 500px;
@@ -164,21 +172,25 @@ form {
 input {
   width: 100%;
   height: 40px;
-  border-radius: 5px;
+  border-radius: 15px;
   border: none;
   box-shadow: #C2C1C7 0px 5px 10px;
+  padding: 0 0 0 7px;
+  font-size: 12px;
+
+
 }
 .field-container label{
   font-size: 15px;
-  padding: 5px;
 }
 .reg
 {
   border: solid #43A8EB 1px;
   background-color:#43A8EB ;
-  border-radius: 5px;
+  border-radius: 15px;
   width: 460px;
-  height: 40px;
+  height: 35px;
+
 }
 
 .reg.btn{
@@ -188,10 +200,13 @@ input {
     display: block;
     text-align: center;
     padding: 5px;
-    margin-top: 10px;
-    border-radius: 5px;
+    border-radius: 15px;
     transition: ease .2s;
   
+}
+.reg.btn:hover{
+    background-color: #1884cc;
+
 }
 
 .reg a
@@ -211,65 +226,24 @@ input {
   background-color: #43A8EB;
   padding: 15px 212px ;
 }
-hr
-{
-
-  border: none;
-  border-bottom: 1px solid black;
+.forget{
+  font-size: 12px;
 }
 
-.or
-{
-  margin-top: 25px;
-
-  display: flex;
-  align-items: center;
-  width: 100%;
-  justify-content: center;
-  margin-left: 10PX;
+.alternate{
+  font-size: 14px;
+  color: black;
 }
-
-.or1
-{
-  display: flex;
-  align-items: center;
-  width: 450px;
-  margin: 10px 0;
-  padding-left: 18px;
-  gap: 20px;
-  color: grey;
+.alternate-style{
+  color: black;
 }
-.sign_in_with
-{
-  margin-top: 25px;
-  display: flex;
-  gap: 100px;
-}
-
-.Google
-{
-  border: 1px #DD4B39 solid;
-  background-color: #DD4B39;
-  color: #FFFFFF;
-  padding: 10px 30px;
-  border-radius: 10px;
-}
-
-.Facebook
-{
-  border: 1px #3B5998 solid;
-  background-color: #3B5998;
-  color: #FFFFFF;
-  padding: 10px 15px;
-  border-radius: 10px;
-}
-
 .end
 {
   padding-top: 10px;
   color: grey;
 }
 /* icon design */
+
 
 .icon
 {

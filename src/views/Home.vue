@@ -1,5 +1,7 @@
 <template>
 
+  <NavBar :isHome="isHome"/>
+
   <section id="hero">
 
     <div class="hero container">
@@ -23,11 +25,16 @@
 import NavBar from '../components/NavBar.vue'
 export default {
   name: 'Home',
-  components: {NavBar}
+  components: {NavBar},
+  data(){
+    return{
+      isHome: true
+    }
+  }
 }
 </script>
 
-<style>
+<style scoped>
 *{
     margin: 0;
     padding: 0;
@@ -96,6 +103,8 @@ export default {
     opacity: 1;
     margin-top: 45px;
     cursor: pointer;
+    letter-spacing: 1px;
+    word-spacing: 3px;
     
 }
 #btn:hover{

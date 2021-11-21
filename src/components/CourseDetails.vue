@@ -3,13 +3,14 @@
     <div class="container top-container">
       <a href="#" class="back-btn">◀️ Back</a>
     </div>
-    <div class="container details-container">
+    <div  class="container details-container">
       <div class="card">
         <h2 class="card-title">Boolean Types</h2>
         <p class="card-details">
           Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illum tenetur itaque, voluptas facilis soluta
           corporis inventore deleniti! Voluptatem ipsum iste illo perferendis. Explicabo voluptate quam illum ex fugit
           at vel.
+		  
         </p>
         <div class="example">
           <h3 class="example-title">Example</h3>
@@ -25,19 +26,25 @@
 </template>
 
 <script>
+import getCollection from '../composables/getCollection'
 export default {
-
+	setup(){
+		const { error, documents } = getCollection('python')
+		console.log('we are here')
+		console.log(documents.id)
+		return { error, documents}
+	}
 }
 </script>
 
-<style scopped>
+<style scoped>
 #details {
 	min-height: 100vh;
 	width: 100%;
 	background: #f6f4fc 0% 0% no-repeat padding-box;
 }
 .details-container {
-	min-height: calc(100vh - 50px);
+	min-height: calc(100vh - 100px);
 	flex-direction: column;
 }
 .top-container {
@@ -45,11 +52,12 @@ export default {
 	justify-content: flex-start;
 }
 .card {
-	max-width: 550px;
+	max-width: 450px;
 	padding: 30px;
-	box-shadow: 0px 3px 6px #a8a4afeb;
+	box-shadow: 1px 1px 6px #a8a4afeb;
 	background: #f6f4fc 0% 0% no-repeat padding-box;
 	border-radius: 12px;
+	font-size: 12px;
 }
 .card-title {
 	margin-bottom: 20px;

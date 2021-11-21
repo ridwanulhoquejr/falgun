@@ -1,12 +1,14 @@
 
 <template>
   <!-- dashboard starts from here -->
+
+    <NavBar />
   
     <section id="dashboard">
 
 
         <div class="container dashboard-container">
-        <profileNav @user="handleUser" />
+        <profileNav />
 
 
           <div class="wrapper">
@@ -72,8 +74,8 @@
             <!-- user details -->
             <div class="box user-details">
                 <img src="../assets/img/user.svg" alt="">
-                <h3>{{userInfo.displayName}}</h3>
-                <p>ridwanulhoque@gmail.com</p>
+                <h3>{{user.displayName}}</h3>
+                <p>{{user.email}}</p>
             </div>
 
             <!-- graph -->
@@ -102,18 +104,25 @@
 <script>
 import { ref } from '@vue/reactivity'
 import profileNav from '../components/profileNav.vue'
+import getUser from '../composables/getUser'
+import NavBar from '../components/NavBar.vue'
+
+
 
 export default {
 
-    components: { profileNav },
+    components: { profileNav, NavBar },
 
     setup(){
-        const userInfo = ref('')
+        const { user } = getUser()
 
-        const handleUser = (user) =>{
-            userInfo.value = user
-        } 
-    return { handleUser, userInfo}
+        const inProfile = ref(true)
+
+        console.log(user);
+
+
+        
+    return { user, inProfile }
     }
 
 }
@@ -148,8 +157,9 @@ export default {
     display: flex;
     justify-content: center;
     align-items: stretch;
-    gap: 30px;
-
+    gap: 50px;
+    padding-bottom: 10px;
+    
 }
 
 .left, .right{
@@ -159,21 +169,24 @@ export default {
     align-items: stretch;
     height: max-content;
     gap: 10px;
+    
 
 }
 .left .box{
-    width: 320px;
+    width: 350px;
+    padding: 15px;
 }
 .right .box{
     width: 200px;
+    padding: 20px;
 }
 .box{
     
     background-color: white;
     border: solid 1px #C2C1C7;
-    border-radius: 10px;
+    border-radius: 7px;
     box-shadow: #C2C1C7 0px 5px 10px;
-    padding: 20px;
+    padding: 10px;
 }
 #button{
     color: white;

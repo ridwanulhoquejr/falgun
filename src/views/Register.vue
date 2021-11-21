@@ -1,4 +1,6 @@
 <template>
+
+<!-- <NavBar /> -->
   <div class="main">
 
    <div class="container register-container">
@@ -26,19 +28,24 @@
              Sign Up 
           </button>
         
-        
-        <div class="forget">
-          <a href="#">Forget Password</a>
-        </div>
     </form>
 
-      <div class="have-account"> 
+    <div class="alternate">
+        <p class="end">
+        Already have an account? 
+        <router-link class="alternate-style" :to="{name: 'Login'}"> Login Account </router-link>
+
+        </p>
+
+      </div>
+
+      <!-- <div class="have-account"> 
         <p>
             Already have an account? 
             <router-link :to="{name: 'Login'}"> Sign In </router-link>
         
         </p>
-      </div>
+      </div> -->
     </div>
   </div>
 </template>
@@ -47,11 +54,13 @@
 import { ref } from '@vue/reactivity'
 import useSignup from '../composables/useSignup'
 import {useRouter} from 'vue-router'
+import NavBar from '../components/NavBar.vue'
+
 
 
 
 export default {
-  components: {},
+  components: {NavBar},
   
     setup(){
 
@@ -84,7 +93,7 @@ export default {
 }
 </script>
 
-<style scopped>
+<style >
 
 body{
     width: 100%;
@@ -103,7 +112,9 @@ body{
   flex-direction: column;
   min-height: 100vh;
 }
-
+h2{
+  font-weight: normal;
+}
 .main img {
   width: 40%;
   object-fit: cover;
@@ -157,20 +168,23 @@ form {
 input {
   width: 100%;
   height: 40px;
-  padding: 8px;
-  font-weight: bold;
-  border-radius: 5px;
+  border-radius: 15px;
   box-shadow: #C2C1C7 0px 5px 10px;
+  /* color: #8796a0; */
+  padding: 0 0 0 7px;
+  font-size: 12px;
+}
+input:focus{
+    outline-color: #483b9e;
 }
 
 .reg
 {
   border: solid #43A8EB 1px;
   background-color:#43A8EB ;
-  border-radius: 5px;
+  border-radius: 15px;
   width: 100%;
-  height: 40px;
-  margin-top: 10px;
+  height: 35px;
 }
 .reg a
 {
@@ -202,35 +216,21 @@ hr
 
 
 
-.sign_in_with
-{
-  margin-top: 25px;
-  display: flex;
-  gap: 100px;
+.alternate{
+  padding: 10px;
 }
-
-.Google
-{
-  border: 1px #DD4B39 solid;
-  background-color: #DD4B39;
-  color: #FFFFFF;
-  padding: 10px 30px;
-  border-radius: 10px;
-}
-
-.Facebook
-{
-  border: 1px #3B5998 solid;
-  background-color: #3B5998;
-  color: #FFFFFF;
-  padding: 10px 15px;
-  border-radius: 10px;
+.alternate-style{
+  text-decoration: underline;
+  padding: 3px;
 }
 
 .end
 {
   padding-top: 10px;
   color: grey;
+}
+.forget{
+  font-size: 12px;
 }
 /* icon design */
 
