@@ -1,29 +1,50 @@
-import { ref } from '@vue/reactivity';
-import { projectFirestore } from '../firebase/config';
+// import { ref } from '@vue/reactivity';
+// import { projectFirestore } from '../firebase/config';
 
-const getCollection = (collection) => {
-  const documents = ref(null);
-  const error = ref(null);
+// const getCollection = () => {
+//   const documents = ref(null);
+//   const error = ref(null);
 
-  let collectionRef = projectFirestore.collection(collection);
+//   // let collectionRef =
+//   projectFirestore
+//     .collection('python')
+//     .get()
+//     .then(
+//       (snapshot) => {
+//         let results = [];
+//         snapshot.docs.forEach((doc) => {
+//           results.push({ ...doc.data(), id: doc.id });
+//         });
+//         console.log(results[0].whileLoop.title);
+//         documents.value = results;
+//         console.log(documents.value);
 
-  collectionRef.onSnapshot(
-    (snap) => {
-      let results = [];
-      snap.docs.forEach((doc) => {
-        results.push({ ...doc.data(), id: doc.id });
-      });
-      documents.value = results;
-      error.value = null;
-    },
-    (err) => {
-      console.log(err.message);
-      documents.value = null;
-      err.value = 'could not fetch data';
-    }
-  );
+//         error.value = null;
+//       },
+//       (err) => {
+//         console.log(err.message);
+//         documents.value = null;
+//         err.value = 'could not fetch data';
+//       }
+//     );
 
-  return { documents, error };
-};
+//   // collectionRef.onSnapshot(
+//   //   (snap) => {
+//   //     let results = [];
+//   //     snap.docs.forEach((doc) => {
+//   //       results.push({ ...doc.data(), id: doc.id });
+//   //     });
+//   //     documents.value = results;
+//   //     error.value = null;
+//   //   },
+//   //   (err) => {
+//   //     console.log(err.message);
+//   //     documents.value = null;
+//   //     err.value = 'could not fetch data';
+//   //   }
+//   // );
 
-export default getCollection;
+//   return { documents, error };
+// };
+
+// export default getCollection;

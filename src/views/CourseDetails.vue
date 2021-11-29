@@ -3,22 +3,21 @@
     <div class="container top-container">
       <a href="#" class="back-btn">◀️ Back</a>
     </div>
-    <div  class="container details-container">
+    <div v-if="post" class="container details-container">
       <div class="card">
-        <h2 class="card-title">Boolean Types</h2>
+
+		<h2 class="card-title">{{post.title}}</h2>
         <p class="card-details">
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illum tenetur itaque, voluptas facilis soluta
-          corporis inventore deleniti! Voluptatem ipsum iste illo perferendis. Explicabo voluptate quam illum ex fugit
-          at vel.
-		  
+          {{post.details}}
         </p>
+
         <div class="example">
           <h3 class="example-title">Example</h3>
-          <p class="example-details">Lorem ipsum dolor sit amet.</p>
+          <!-- <p class="example-details">Lorem ipsum dolor sit amet.</p> -->
           <pre id="example-code">
-            test
+            {{post.example}}
           </pre>
-          <a href="#" class="example-btn">Try Example</a>
+          <a href="#" class="example-btn">Try Yourself</a>
         </div>
       </div>
     </div>
@@ -26,14 +25,19 @@
 </template>
 
 <script>
-import getCollection from '../composables/getCollection'
+// import getCollection from '../composables/getCollection'
+import getPost from '../composables/getPost'
 export default {
-	setup(){
-		const { error, documents } = getCollection('python')
-		console.log('we are here')
-		console.log(documents.id)
-		return { error, documents}
-	}
+
+	props: ['id'],
+    setup(props){
+
+        const {post, error, load} = getPost(props.id)
+        load()
+
+        return {post, error}
+    }
+	
 }
 </script>
 
@@ -53,6 +57,7 @@ export default {
 }
 .card {
 	max-width: 450px;
+	min-width: 450px;
 	padding: 30px;
 	box-shadow: 1px 1px 6px #a8a4afeb;
 	background: #f6f4fc 0% 0% no-repeat padding-box;
@@ -61,6 +66,7 @@ export default {
 }
 .card-title {
 	margin-bottom: 20px;
+	font-weight: bold;
 }
 .card-details {
 	margin-bottom: 20px;
@@ -80,6 +86,7 @@ export default {
 	background-color: white;
 	padding: 20px;
 	border-radius: 8px;
+	text-align: start;
 }
 .example-btn {
 	display: inline-block;

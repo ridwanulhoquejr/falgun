@@ -11,49 +11,30 @@
     </h2>
 
     <form @submit.prevent="handleSubmit">
-
         <div class="field-container">
           <input type="email" required placeholder="Email" v-model="email">
         </div>
-
         <div class="field-container">
           <input type="password" required placeholder="Password" v-model="password">
         </div>
-
           <div class="error"> {{error}}</div>
           <button class="reg btn">
              Sign In 
           </button>
-        
         
           <div class="forget">
             <router-link :to="{}"> Forget Password?</router-link>
           </div>
 
     </form>
-    <!-- <div class="or">
-      <hr>
-    <p>or</p>
-    <hr>
-    </div> -->
     
-    <!-- <div class="sign_in_with">
-      <a href="#" class="Google">
-        Sign in with Google
-      </a>
-        <a href="#" class="Facebook">
-          Sign in with Facebook
-        </a>
-    </div> -->
       <div class="alternate">
         <p class="end">
         New to Falgun? 
         <router-link class="alternate-style" :to="{name: 'Register'}"> Create new account </router-link>
 
         </p>
-
       </div>
-    
     
    </div>
   </div>

@@ -7,9 +7,11 @@
         </div>
 
         <nav class="nav-links">
+          <router-link :to="{name: 'CodeEditor'}"> Code-Editor </router-link>
           <router-link :to="{name: 'Courses'}"> Courses </router-link>
-          <router-link :to="{name: 'Login'}"> Login </router-link>
-          <router-link :to="{name: 'Register'}"> Register </router-link>
+          <router-link v-if="!user" :to="{name: 'Login'}"> Login </router-link>
+          <router-link v-if="!user" :to="{name: 'Register'}"> Register </router-link>
+          <router-link v-if="user" :to="{name: 'Blog'}"> Blog </router-link>
           <router-link v-if="user" :to="{name: 'Profile'}"> Profile </router-link>
         </nav>
       </div>
@@ -65,7 +67,7 @@ header{
 }
 .nav-links{
   display: flex;
-  padding-right: 100px;
+  padding-right: 70px;
 }
 .nav-links a{
   text-decoration: none;
@@ -87,7 +89,7 @@ header .logo{
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-left: 100px;
+  padding-left: 70px;
 }
 header.isHome{
   background-image: none;
