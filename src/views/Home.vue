@@ -11,7 +11,10 @@
       <p class="para"> 
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam nam aliquid error repudiandae facere dignissimos.
       </p>
+
+      <router-link :to="{name: 'Courses'}">
       <button id="btn"> START  LEARNING</button>
+      </router-link>
 
     </div>
 
@@ -34,7 +37,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style >
 *{
     margin: 0;
     padding: 0;
@@ -109,5 +112,8 @@ export default {
 }
 #btn:hover{
     background-color: #1884cc;
+}
+h1{
+  font-weight: 700;
 }
 </style>

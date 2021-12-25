@@ -40,12 +40,12 @@ export default {
 
 .container.lessons-container {
 	flex-direction: column;
-  margin-top: 100px;
+  	margin-top: 100px;
 }
 
 .lesson-wrapper {
 	width: 100%;
-  max-width: 650px;
+  	max-width: 650px;
 	display: flex;
 	flex-direction: row;
 	gap: 20px;

@@ -5,7 +5,7 @@
 
    <div class="container register-container">
 
-    <h2>
+    <h2 class="choice-courses">
         Create an account
     </h2>
     <form @submit.prevent="handleSubmit">

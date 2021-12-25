@@ -6,7 +6,7 @@ import Profile from '../views/Profile.vue';
 import Courses from '../views/Courses.vue';
 import CourseLesson from '../views/CourseLesson.vue';
 import CourseDetails from '../views/CourseDetails.vue';
-import CodeEditor from '../views/CodeEditor.vue';
+import QuizPy from '../views/QuizPy.vue';
 import Blog from '../views/Blog.vue';
 import { projectAuth } from '../firebase/config';
 
@@ -61,9 +61,9 @@ const routes = [
     props: true,
   },
   {
-    path: '/codeEditor',
-    name: 'CodeEditor',
-    component: CodeEditor,
+    path: '/quizpy',
+    name: 'QuizPy',
+    component: QuizPy,
   },
   {
     path: '/blog',

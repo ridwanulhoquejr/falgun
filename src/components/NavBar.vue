@@ -7,7 +7,7 @@
         </div>
 
         <nav class="nav-links">
-          <router-link :to="{name: 'CodeEditor'}"> Code-Editor </router-link>
+          <router-link v-if="user" :to="{name: 'QuizPy'}"> Quiz </router-link>
           <router-link :to="{name: 'Courses'}"> Courses </router-link>
           <router-link v-if="!user" :to="{name: 'Login'}"> Login </router-link>
           <router-link v-if="!user" :to="{name: 'Register'}"> Register </router-link>

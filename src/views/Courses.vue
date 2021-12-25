@@ -6,7 +6,7 @@
 
   <div class="middle">
       <div class="question">
-        <h2>What would you like to learn?</h2>
+        <h2 class="choice-courses">What would you like to learn?</h2>
       </div>
      <div class="program_element">
         <div class="left">
@@ -268,9 +268,13 @@ img {
   h3, h5{
     color: black;
     padding: 2px;
+    font-weight: 600;
 
   }
-  
+  .choice-courses{
+    font-size: 22px;
+    font-weight: bold;
+  }
   
 
  a.router-link-active{

@@ -34,7 +34,7 @@
                     <div class="container">
                         <div class="top">
                             <h4>Python</h4>
-                            <p>15%</p>
+                            <p>65%</p>
                         </div>
                         <div class="progress-container">
                             <div class="progress"></div>
@@ -46,7 +46,7 @@
                     <div class="container">
                         <div class="top">
                             <h4>Java</h4>
-                            <p>10%</p>
+                            <p>0%</p>
                         </div>
                         <div class="progress-container">
                             <div class="progress"></div>
@@ -58,7 +58,7 @@
                     <div class="container">
                         <div class="top">
                             <h4>C++</h4>
-                            <p>3%</p>
+                            <p>0%</p>
                         </div>
                         <div class="progress-container">
                             <div class="progress"></div>

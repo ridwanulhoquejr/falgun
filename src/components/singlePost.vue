@@ -7,7 +7,7 @@
         <div>
 
           <router-link :to="{ name: 'CourseDetails', params: { id: post.id }}">
-            <h4>{{ post.title }}</h4>
+            <h3 class="content-list-title">{{ post.title }}</h3>
           </router-link>
 
         </div>
@@ -31,7 +31,13 @@ export default {
 
 <style>
 .container.post-list{
-  padding-top: 20px;
+  padding-top: 10px;
 }
-
+.content-list-title{
+  font-weight: lighter;
+  font-size: 18px ;
+}
+.content-list-title:hover{
+  color: white;
+}
 </style>

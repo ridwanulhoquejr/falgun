@@ -6,7 +6,7 @@
 
    <div class="container login-container">
     
-    <h2 class="login-title">
+    <h2 class="choice-courses">
       Login to Falgun
     </h2>
 

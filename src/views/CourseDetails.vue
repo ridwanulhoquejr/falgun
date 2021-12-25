@@ -1,23 +1,24 @@
 <template>
   <section id="details">
     <div class="container top-container">
-      <a href="#" class="back-btn">◀️ Back</a>
+      <div @click="$router.go(-1)" class="back-btn">◀ Back</div>
     </div>
     <div v-if="post" class="container details-container">
       <div class="card">
 
-		<h2 class="card-title">{{post.title}}</h2>
-        <p class="card-details">
-          {{post.details}}
+		<h2 class="card-title">{{post.title}} </h2>
+        <p class="card-details" >
+          <!-- {{post.details}} -->
+		  <span v-html="post.details"></span>
         </p>
 
         <div class="example">
           <h3 class="example-title">Example</h3>
           <!-- <p class="example-details">Lorem ipsum dolor sit amet.</p> -->
-          <pre id="example-code">
-            {{post.example}}
-          </pre>
-          <a href="#" class="example-btn">Try Yourself</a>
+          <div id="example-code">
+			<span v-html="post.example"></span>
+          </div>
+          <a href="https://replit.com/join/lurymwguqy-ridwanulhoque" target="_blank" class="example-btn">Try Yourself</a>
         </div>
       </div>
     </div>
@@ -96,6 +97,12 @@ export default {
 	color: white;
 	border-radius: 8px;
 }
-
+.back-btn{
+	cursor: pointer;
+	padding: 50px 0 0 30px;
+}
+.h3{
+	font-weight: bold;
+}
 
 </style>
